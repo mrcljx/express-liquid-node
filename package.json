@@ -1,0 +1,25 @@
+{
+  "name": "express-liquid-node",
+  "version": "0.0.1",
+  "author": "Marcel Jackwerth <marceljackwerth@gmail.com>",
+  "description": "Express-Engine for Liquid-Node",
+  "main": "lib/index.coffee",
+  "directories": {
+    "lib": "./lib"
+  },
+  "devDependencies": {
+    "bluebird": "^2.3.11",
+    "liquid-node": "^2.3.0"
+  },
+  "peerDependencies": {
+    "bluebird": "^2.3.11",
+    "liquid-node": "^2.3.0"
+  },
+  "scripts": {
+    "test": "true",
+    "compile": "rm -rf lib && coffee --output lib --map --compile src",
+    "prepublish": "npm run precommit && npm run compile",
+    "precommit": "npm test && npm run lint",
+    "lint": "coffeelint src/**"
+  }
+}
