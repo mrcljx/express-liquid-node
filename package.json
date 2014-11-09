@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "Marcel Jackwerth <marceljackwerth@gmail.com>",
   "description": "Express-Engine for Liquid-Node",
-  "main": "lib/index.coffee",
+  "main": "lib/index.js",
   "directories": {
     "lib": "./lib"
   },
