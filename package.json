@@ -1,6 +1,6 @@
 {
   "name": "express-liquid-node",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Marcel Jackwerth <marceljackwerth@gmail.com>",
   "description": "Express-Engine for Liquid-Node",
   "main": "lib/index.js",
