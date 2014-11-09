@@ -10,12 +10,11 @@ app = express()
 app.set('port', process.env.PORT ? 3000)
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'liquid')
-app.enable('view cache')
 app.engine('liquid', liquid(traceError: true))
 
 fruits = ["Orange", "Apple", "Banana"]
 
-app.use (req, res, next) ->
+app.get '/', (req, res) ->
   res.render 'fruits', fruits: fruits, message: "Hello"
 
 PORT = app.get('port')
