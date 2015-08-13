@@ -4,13 +4,12 @@ fs = require "fs"
 readFile = Promise.promisify fs.readFile, fs
 
 module.exports = (settings) ->
-  engine = undefined
+  engine = new (Liquid.Engine)
 
   renderFile = (path, options) ->
     readFile(path).then (content) ->
       engine.parseAndRender content, options
 
-  engine = new (Liquid.Engine)
   if settings.includes
     engine.registerFileSystem new (Liquid.LocalFileSystem)(settings.includes)
   (path, options, cb) ->
