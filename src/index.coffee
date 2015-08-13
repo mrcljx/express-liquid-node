@@ -11,7 +11,8 @@ module.exports = (settings) ->
       engine.parseAndRender content, options
 
   engine = new (Liquid.Engine)
-
+  if settings.includes
+    engine.registerFileSystem new (Liquid.LocalFileSystem)(settings.includes)
   (path, options, cb) ->
     if options.layout
       renderFile(path, options).then (pageContent) ->
